@@ -24,7 +24,12 @@ implementation 'com.tencent:mmkv-static:1.3.0'
 ```
 
 
+ **添加权限**
 
+```
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+```
 
 ###  **简单使用** 
 
