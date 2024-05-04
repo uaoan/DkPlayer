@@ -60,11 +60,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //投屏
-                new Screen().setStaerActivity(MainActivity.this)
+                /*new Screen().setStaerActivity(MainActivity.this)
                         .setName("斗破苍穹")
                         .setUrl("https://s.xlzys.com/play/9avDmPgd/index.m3u8")
                         .setImageUrl("http://i0.hdslb.com/bfs/article/96fa4320db5115711c8c30afaff936910595d336.png")
-                        .show();
+                        .show();*/
             }
         });
 

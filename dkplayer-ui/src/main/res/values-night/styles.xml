@@ -1,6 +1,0 @@
-<resources>
-
-    <style name="Widget.Theme.DkPlayer播放器.MyView" parent="">
-        <item name="android:background">@color/gray_600</item>
-    </style>
-</resources>

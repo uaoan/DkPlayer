@@ -6,5 +6,3 @@ before_install:
 install:
   - FILE="-Dfile=dkplayer-ui-debug.aar"
   - mvn install:install-file $FILE -DgroupId=com.github.uaoan -DartifactId=dkplayer -Dversion=1.0 -Dpackaging=aar -DgeneratePom=true
-  - FILE="-Dfile=DlnaLibrary-debug.aar"
-  - mvn install:install-file $FILE -DgroupId=com.github.uaoan -DartifactId=DlnaLibrary -Dversion=1.0 -Dpackaging=aar -DgeneratePom=true

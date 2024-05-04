@@ -6,6 +6,6 @@
     <artifactId>dkplayer</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
-    <description>dkplayer-ui</description>
+    <description>dkplayer</description>
 
 </project>

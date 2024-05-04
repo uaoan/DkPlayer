@@ -22,4 +22,3 @@ dependencyResolutionManagement {
 rootProject.name = "DkPlayer播放器"
 include ':app'
 include ':dkplayer'
-include ':DlnaLibrary'
