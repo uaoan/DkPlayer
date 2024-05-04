@@ -10,8 +10,7 @@
 ```
 allprojects {
     repositories {
-        google()
-        jcenter()
+        mavenCentral()
         maven { url 'https://jitpack.io' }      //增加 jitPack Maven 仓库
     }
 }
@@ -20,6 +19,8 @@ allprojects {
 
 ```
 implementation 'com.github.uaoan:DkPlayer:dkplayer-1.0'
+implementation 'xyz.doikki.android.dkplayer:dkplayer-java:3.3.7'
+implementation 'com.tencent:mmkv-static:1.3.0'
 ```
 
 
