@@ -32,15 +32,12 @@ public class MainActivity extends AppCompatActivity {
         controller.addDefaultControlComponent("斗破苍穹", false);
         videoView.setVideoController(controller); //设置控制器
         videoView.start(); //开始播放，不调用则不自动播放
-
-        //上一集按钮
         videoView.setOnUpSetClickListener(new UaoanVideoPlayer.OnUpSetClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(MainActivity.this, "上一集", Toast.LENGTH_SHORT).show();
             }
         });
-
         videoView.setOnDownSetClickListener(new UaoanVideoPlayer.OnDownSetClickListener() {
             @Override
             public void onClick(View view) {
