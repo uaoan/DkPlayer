@@ -23,6 +23,9 @@ implementation 'xyz.doikki.android.dkplayer:dkplayer-java:3.3.7'
 implementation 'com.tencent:mmkv-static:1.3.0'
 ```
 
+ **配合DLNA投屏使用**
+[DLNA投屏库](https://github.com/uaoan/UaoanDLNA) 
+
 
  **添加权限**
 
