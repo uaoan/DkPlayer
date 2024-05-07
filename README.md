@@ -18,7 +18,7 @@ allprojects {
  **在 app 的 build.gradle 文件中找到 dependencies{} 代码块，并在其中加入以下语句：** 
 
 ```
-implementation 'com.github.uaoan:DkPlayer:dkplayer-1.0'
+implementation 'com.github.uaoan:DkPlayer:dkplayer-1.1'
 implementation 'xyz.doikki.android.dkplayer:dkplayer-java:3.3.7'
 implementation 'com.tencent:mmkv-static:1.3.0'
 ```
