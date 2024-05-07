@@ -94,6 +94,27 @@
             android:visibility="gone"
             android:src="@mipmap/yplay" />
 
+        <!--<LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="竖屏"
+                android:textSize="6dp"
+                android:textColor="#ffffffff"
+                android:background="@drawable/vertical_button"
+                android:padding="3dp"/>
+-->
+            <ImageView
+                android:id="@+id/fullscreen_header"
+                android:layout_width="@dimen/dkplayer_controller_height"
+                android:layout_height="@dimen/dkplayer_controller_height"
+                android:padding="16dp"
+                android:src="@drawable/shup" />
+        <!--</LinearLayout>-->
         <ImageView
             android:id="@+id/fullscreen"
             android:layout_width="@dimen/dkplayer_controller_height"

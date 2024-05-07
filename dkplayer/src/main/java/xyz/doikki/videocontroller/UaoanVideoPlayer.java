@@ -9,8 +9,10 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.CompoundButton;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
@@ -112,10 +114,12 @@ public class UaoanVideoPlayer extends VideoView {
                 if (playerState==11){
                     //全屏显示底部按钮
                     VodControlView.setVisibilitys(View.VISIBLE);
+                    VodControlView.setVerticalVisibility(GONE);
                 }
                 if (playerState==10){
                     //竖屏隐藏底部按钮
                     VodControlView.setVisibilitys(View.GONE);
+                    VodControlView.setVerticalVisibility(VISIBLE);
                 }
 
 
@@ -148,6 +152,15 @@ public class UaoanVideoPlayer extends VideoView {
 
         });
 
+
+        //竖屏全屏
+        VodControlView.setOnVerticalClickListener(new VodControlView.OnVerticalClickListener() {
+            @Override
+            public void onClick(View view) {
+                startFullScreen();
+            }
+        });
+
         //小窗
         TitleView.setOnWindowClickListener(new TitleView.OnWindowClickListener() {
             @Override
@@ -174,7 +187,7 @@ public class UaoanVideoPlayer extends VideoView {
                         .setView(vws)
                         .show();
                 tcs.getWindow().setBackgroundDrawable(new ColorDrawable());
-                setDialogSize(tcs, 550); //设置弹窗大小
+                //setDialogSize(tcs, 550); //设置弹窗大小
                 ArrayList<String> aar_menu = new ArrayList<>();
                 aar_menu.add("画面比例");
                 aar_menu.add("播放设置");
@@ -233,7 +246,7 @@ public class UaoanVideoPlayer extends VideoView {
                                         .setView(vw)
                                         .show();
                                 tc.getWindow().setBackgroundDrawable(new ColorDrawable());
-                                setDialogSize(tc, 460); //设置弹窗大小
+                                //setDialogSize(tc, 460); //设置弹窗大小
                                 ArrayList<String> aar_screenScale = new ArrayList<>();
                                 aar_screenScale.add("16:9");
                                 aar_screenScale.add("4:3");
@@ -416,7 +429,7 @@ public class UaoanVideoPlayer extends VideoView {
                                         .setView(vw)
                                         .show();
                                 tc.getWindow().setBackgroundDrawable(new ColorDrawable());
-                                setDialogSize(tc, 550); //设置弹窗大小
+                                //setDialogSize(tc, 550); //设置弹窗大小
                                 ArrayList<String> aar_timing = new ArrayList<>();
                                 aar_timing.add("不启用");
                                 aar_timing.add("播完当前");
@@ -523,12 +536,22 @@ public class UaoanVideoPlayer extends VideoView {
             @Override
             public void onClick(View view) {
                 View vw=View.inflate(getContext(),R.layout.view_layout,null);
+                HorizontalScrollView scrollView=new HorizontalScrollView(getContext());
+                ViewGroup.LayoutParams layoutParams=new ViewGroup.LayoutParams(-1,-1);
+                scrollView.setLayoutParams(layoutParams);
+                scrollView.setHorizontalScrollBarEnabled(false);
+                LinearLayout linear=new LinearLayout(getContext());
+                linear.setLayoutParams(layoutParams);
+                linear.setGravity(Gravity.CENTER);
+                linear.setOrientation(LinearLayout.HORIZONTAL);
+                scrollView.addView(linear);
                 LinearLayout linearLayout=vw.findViewById(R.id.line1);
+                linearLayout.addView(scrollView);
                 AlertDialog tc=new AlertDialog.Builder(getContext())
                         .setView(vw)
                         .show();
-                        tc.getWindow().setBackgroundDrawable(new ColorDrawable());
-                        setDialogSize(tc, 550); //设置弹窗大小
+                tc.getWindow().setBackgroundDrawable(new ColorDrawable());
+                setDialogSize(tc, 550); //设置弹窗大小
 
                 ArrayList<String> aar_speed=new ArrayList<>();
                 aar_speed.add("0.75x");
@@ -539,6 +562,9 @@ public class UaoanVideoPlayer extends VideoView {
                 aar_speed.add("2.0x");
                 aar_speed.add("2.5x");
                 aar_speed.add("3.0x");
+                aar_speed.add("3.5x");
+                aar_speed.add("4.0x");
+                aar_speed.add("5.0x");
                 for (int i=0;i<aar_speed.size();i++){
                     final TextView wn=new TextView(getContext());
                     if (aar_speed.get(i).equals(speed_text)){
@@ -551,7 +577,7 @@ public class UaoanVideoPlayer extends VideoView {
                     wn.setWidth(220);
                     wn.setMinWidth(180);
                     wn.setText(aar_speed.get(i));
-                    linearLayout.addView(wn);
+                    linear.addView(wn);
                     wn.setOnClickListener(new OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -588,13 +614,25 @@ public class UaoanVideoPlayer extends VideoView {
                                 setSpeed(3.0f);
                                 speed_play=3.0f;
                             }
+                            if (getSpeed.equals("3.5x")){
+                                setSpeed(3.5f);
+                                speed_play=3.5f;
+                            }
+                            if (getSpeed.equals("4.0x")){
+                                setSpeed(4.0f);
+                                speed_play=4.0f;
+                            }
+                            if (getSpeed.equals("5.0x")){
+                                setSpeed(5.0f);
+                                speed_play=5.0f;
+                            }
                             speed_text=getSpeed;
                             if (speed_text.equals("1.0x")){
                                 VodControlView.speed.setText("倍速");  //设置播放速度显示到倍速按钮
                             }else {
                                 VodControlView.speed.setText(speed_text);  //设置播放速度显示到倍速按钮
                             }
-                           tc.dismiss();
+                            tc.dismiss();
                         }
                     });
                 }

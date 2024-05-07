@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.uaoanlao.tv.Screen;
-
 import xyz.doikki.videocontroller.StandardVideoController;
 import xyz.doikki.videocontroller.UaoanVideoPlayer;
 import xyz.doikki.videocontroller.component.VodControlView;
@@ -19,7 +17,7 @@ import xyz.doikki.videoplayer.player.VideoView;
 
 public class MainActivity extends AppCompatActivity {
     private UaoanVideoPlayer videoView;
-    private String URL="https://s.xlzys.com/play/9avDmPgd/index.m3u8";
+    private String URL="https://vv.jisuzyv.com/play/negox6je/index.m3u8";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         videoView.setPlayerFactory(ExoMediaPlayerFactory.create());  //使用ijk内核
         videoView.setUrl(URL); //设置视频地址
         StandardVideoController controller = new StandardVideoController(this);
-        controller.addDefaultControlComponent("斗破苍穹", false);
+        controller.addDefaultControlComponent("短剧", false);
         videoView.setVideoController(controller); //设置控制器
         videoView.start(); //开始播放，不调用则不自动播放
         videoView.setOnUpSetClickListener(new UaoanVideoPlayer.OnUpSetClickListener() {

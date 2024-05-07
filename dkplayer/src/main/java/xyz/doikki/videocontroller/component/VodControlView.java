@@ -39,6 +39,7 @@ public class VodControlView extends FrameLayout implements IControlComponent, Vi
     private final TextView mTotalTime;
     private final TextView mCurrTime;
     private final ImageView mFullScreen;
+    public  static ImageView fullscreen_header; //竖屏
     private final LinearLayout mBottomContainer;
     private final SeekBar mVideoProgress;
     private final ProgressBar mBottomProgress;
@@ -80,6 +81,16 @@ public class VodControlView extends FrameLayout implements IControlComponent, Vi
         mPlayButton.setOnClickListener(this);
         mBottomProgress = findViewById(R.id.bottom_progress);
 
+        //竖屏全屏
+        fullscreen_header=findViewById(R.id.fullscreen_header);
+        fullscreen_header.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onVertical.onClick(view);
+            }
+        });
+
+
         //选集按钮
         xuanji=findViewById(R.id.xuan);
         xuanji.setOnClickListener(new OnClickListener() {
@@ -119,6 +130,19 @@ public class VodControlView extends FrameLayout implements IControlComponent, Vi
         if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP_MR1) {
             mVideoProgress.getLayoutParams().height = ViewGroup.LayoutParams.WRAP_CONTENT;
         }
+    }
+    //竖屏显示隐藏
+    public static void setVerticalVisibility(int ks){
+        fullscreen_header.setVisibility(ks);
+    }
+
+    //竖屏全屏接口
+    public interface OnVerticalClickListener{
+        void onClick(View view);
+    }
+    private static OnVerticalClickListener onVertical;
+    public static void setOnVerticalClickListener(OnVerticalClickListener onVerticalClickListener){
+        onVertical=onVerticalClickListener;
     }
 
     //选集接口
