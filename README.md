@@ -208,8 +208,8 @@ new Screen().setStaerActivity(MainActivity.this)
  ### [更多方法请点击前往 >](https://github.com/Doikki/DKVideoPlayer/wiki/API)
 
 
- ### Thanks
-  :fa-circle: **[DKVideoPlayer](https://github.com/Doikki/DKVideoPlayer)** 
+ ### 感谢
+   **[DKVideoPlayer](https://github.com/Doikki/DKVideoPlayer)** 
 
 
  **————————————————————————————————————————————————————————————————————————** 
