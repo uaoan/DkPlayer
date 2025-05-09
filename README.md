@@ -1,6 +1,6 @@
-# 项目已不维护了，最新项目请转移到  [UaoanDkVideoPlayer](https://github.com/uaoan/UaoanDKVideoPlayer.git)
-# 项目已不维护了，最新项目请转移到  [UaoanDkVideoPlayer](https://github.com/uaoan/UaoanDKVideoPlayer.git)
-# 项目已不维护了，最新项目请转移到  [UaoanDkVideoPlayer](https://github.com/uaoan/UaoanDKVideoPlayer.git)
+# 项目已不维护了，最新项目请转移到  [UaoanDkVideoPlayer](https://github.com/uaoan/UaoanDKVideoPlayer)
+# 项目已不维护了，最新项目请转移到  [UaoanDkVideoPlayer](https://github.com/uaoan/UaoanDKVideoPlayer)
+# 项目已不维护了，最新项目请转移到  [UaoanDkVideoPlayer](https://github.com/uaoan/UaoanDKVideoPlayer)
 
 
 
